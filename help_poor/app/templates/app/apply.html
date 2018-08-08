@@ -1,0 +1,89 @@
+{% extends "app/index.html" %}
+{% load staticfiles %}
+{% load app_extras %}
+
+{% block side_block %}
+<h2 class="side_heading" align="center"><b>Apply Here</b></h2>
+<h3 class="side_text">We are here with a mission to feed hungry people by providing them with atleast 2 meals per day.If you are interested in this nobel work and want to become a part
+    of our organisation,you can submit your application.</h3>
+    <h4 class="side_text">We may be late in responding you,but we always consider each and every application.
+    <b>Your information is safe with us.So please provide correct information.</b></h4>
+    <h2 class="side_head" align="center"><b>Donate Food Spread Happiness</b></h2>
+    <p><img src="{% static "app/pic1.jpeg" %}" alt="" class="side_image"></p>
+    <p><img src="{% static "app/pic3.jpeg" %}" alt="" class="side_image"></p>
+    <p><img src="{% static "app/pic5.jpeg" %}" alt="" class="side_image"></p>
+{% endblock %}
+{% block body_block %}
+
+
+<h1><b>Apply Here</b></h1>
+  <div class="form_area">
+
+<div class="inner_div">
+
+
+  <form method="post">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="{{ form.profile_pic.id_for_label}}">Upload your photo:</label>
+      {{ form.profile_pic|add_class:"form-control" }}
+    </div>
+    <div class="form-group">
+      <label for="{{ form.first_name.id_for_label}}">FirstName:</label>
+      {{ form.first_name|add_class:"form-control" }}
+    </div>
+    <div class="form-group">
+      <label for="{{ form.last_name.id_for_label}}">LastName:</label>
+      {{ form.last_name|add_class:"form-control" }}
+    </div>
+    <div class="form-group">
+      <label for="{{ form.dob.id_for_label}}">Date of birth:(yyyy-mm-dd)</label>
+      {{ form.dob|add_class:"form-control" }}
+    </div>
+    <div class="form-group">
+      <label for="{{ form.gender.id_for_label}}">Gender:</label>
+      {{ form.gender|add_class:"form-control" }}
+    </div>
+    <div class="form-group">
+      <label for="{{ form.educatio.id_for_label}}">Education:</label>
+      {{ form.education|add_class:"form-control" }}
+    </div>
+    <div class="form-group">
+      <label for="{{ form.email.id_for_label}}">Email Address:</label>
+      {{ form.email|add_class:"form-control" }}
+    </div>
+    <div class="form-group">
+      <label for="{{ form.mobile.id_for_label}}">Mobile number:</label>
+      {{ form.mobile|add_class:"form-control" }}
+    </div>
+    <div class="form-group">
+      <label for="{{ form.address.id_for_label}}">Permanent Address:</label>
+      {{ form.address|add_class:"form-control" }}
+    </div>
+    <div class="form-group">
+      <label for="{{ form.city.id_for_label}}">City:</label>
+      {{ form.city|add_class:"form-control" }}
+    </div>
+    <div class="form-group">
+      <label for="{{ form.state.id_for_label}}">State:</label>
+      {{ form.state|add_class:"form-control" }}
+    </div>
+    <div class="form-group">
+      <label for="{{ form.pincode1.id_for_label}}">Area where you would like to work(Pincode 1):</label>
+      {{ form.pincode1|add_class:"form-control" }}
+    </div>
+    <div class="form-group">
+      <label for="{{ form.pincode2.id_for_label}}">Area where you would like to work(Pincode 2):</label>
+      {{ form.pincode2|add_class:"form-control" }}
+    </div>
+    <div class="form-group">
+      <label for="{{ form.pincode3.id_for_label}}">Area where you would like to work(Pincode 3):</label>
+      {{ form.pincode3|add_class:"form-control" }}
+    </div>
+  <input type="submit" name="" value="Send" class="button">
+  </form>
+</div>
+</div>
+
+
+{% endblock %}

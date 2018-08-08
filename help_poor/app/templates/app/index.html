@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+{% load staticfiles %}
+{% load app_extras %}
+<html>
+<head>
+
+<title>{% block title %}{% endblock %}</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="{% static "app/new.css" %}" rel="stylesheet" type="text/css" />
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <link href="http://fonts.googleapis.com/css?family=Arvo" rel="stylesheet" type="text/css" />
+  <link href="http://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet"  href="https://fonts.googleapis.com/css?family=Tangerine" type="text/css" >
+  <link rel="stylesheet"  href="https://fonts.googleapis.com/css?family=Damion" type="text/css" >
+  <link rel="stylesheet"
+href="https://fonts.googleapis.com/css?family=Lobster">
+  {% block css_block %}
+  {% endblock %}
+
+	</head>
+<body>
+
+
+
+  <div class="header">
+  <a href={% url 'app:index' %} id="heading_link"><h1 id="heading">Kill Hunger</h1></a>
+  <p id="home_text"><b>Donate Food Relief Hunger.</b></p>
+</div>
+<div class="div2">
+  {% if user.is_authenticated %}
+  <a href="{% url 'app:index' %}">Home</a>
+  <!-- <a href="#">About</a> -->
+  <a href="{% url 'app:donate' user.id  %}">Donate Food</a>
+    <a href="{% url 'app:area' %}">Report Area</a>
+  <a href="{% url 'app:apply'%}">Apply here</a>
+  <a href="{% url 'app:contact' user.id  %}">Contact Us</a>
+  <a href="{% url 'app:user_logout' %}" class="right"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
+  {% if user.is_staff %}
+  <a href="{% url 'app:status' user.id  %}">Change status</a>
+  <a href="{% url 'admin:index' %}">Admin</a></li>
+  {% endif %}
+  {% else %}
+  <a href="{% url 'app:register' %}" class="right"><span class="glyphicon glyphicon-user"></span> SignUp</a>
+  <a href="{% url 'app:user_login' %}" class="right"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+
+
+  {% endif %}
+
+
+</div>
+
+
+
+
+<div class="row">
+<div class="side">
+  {% block side_block %}
+
+         {% if user.is_authenticated %}
+         <h2 class="side_heading" align="center"><b>
+            Donate leftover food</b>
+          </h2>
+          <h3 class="side_text">
+      You can contribute to our <b><i>Food Donation System</i></b> as a food donor or you can apply to become a part of our organisation  or you can help us by providing information about needy areas.
+    </h3>
+          <h3 class="side_text">
+            Be the part as...
+          </h3>
+          <ul class="linkedList">
+            <li >
+              <a href="{% url 'app:donate' user.id %}">Food Donor</a>
+            </li>
+            <li>
+              <a href="{% url 'app:apply' %}">Apply here to join organisation</a>
+            </li>
+            <li>
+              <a href="{% url 'app:area' %}">Provide info about needy areas.</a>
+            </li>
+          </ul>
+          <h2 class="side_head" align="center"><b>Donate Food Spread Happiness</b></h2>
+          <p><img src="{% static "app/pic1.jpeg" %}" alt="" class="side_image"></p>
+          <p><img src="{% static "app/pic3.jpeg" %}" alt="" class="side_image"></p>
+
+          {% else %}
+
+          <h2 class="side_head" align="center"><b>Donate Food Spread Happiness</b></h2>
+          <p><img src="{% static "app/pic2.jpeg" %}" alt="" class="side_image"></p>
+          <p><img src="{% static "app/pic3.jpeg" %}" alt="" class="side_image"></p>
+          <p><img src="{% static "app/pic5.jpeg" %}" alt="" class="side_image"></p>
+
+
+          {% endif %}
+
+
+
+        {% endblock %}
+</div>
+<div class="main">
+  {% block body_block %}
+  <h1 id="home_heading"><b>Welcome to Food Donation System</b>
+  </h1>
+            <img class="left" src="{% static "app/pic2.jpg" %}" width="130" height="160"/>
+            <p style="font-size:19px">
+
+India, with a population of over 1.3 billion, has seen tremendous growth in the past two decades. Gross Domestic Product has increased 4.5 times and per capita
+
+consumption has increased 3 times. Similarly, food grain production has increased almost 2 times. However, despite phenomenal industrial and economic growth and while
+
+India produces sufficient food to feed its population, it is unable to provide access to food to a large number of people, especially women and children.
+According to FAO estimates in ‘The State of Food Security and Nutrition in the World, 2017” report, 190.7 million people are undernourished in India. By this measure
+
+14.5% of the population is undernourished in India. Also, 51.4% of women in reproductive age between 15 to 49 years are anaemic. Further according to the report 38.4%
+
+of the children aged under five in India are stunted (too short for their age), while 21% suffer from wasting, meaning their weight is too low for their height.
+
+Malnourished children have a higher risk of death from common childhood illnesses such as diarrhea, pneumonia, and malaria. The Global Hunger Index 2016 ranks India at
+
+97 out of 118 countries on the basis of three leading indicators -- prevalence of wasting and stunting in children under 5 years, under 5 child mortality rate, and the
+
+proportion of undernourished in the population.
+Moving towards the other site i.e.seeing India from a different perspective,we Indians love to eat as well as feed others. For this very reason, every time we have a
+
+function or a party, we ensure that there’s plenty of food around. After all the eating, drinking, and merriment, we often end up with a lot of leftover food. While
+
+some of it can be packed off to friends and relatives, most of it goes to waste.
+There are also big restaurants,hotels,college hostels etc who daily have a lot of leftover food and most of it goes waste.
+Honestly we all waste food for various reasons like because of amendment of plans,improper management,forgotten to use it on time etc.Regardless of the rationale why we throw out food,honestly we do it.So why don't we utilise it and help others.</p>
+<p style="font-size:19px" >We are here with a mission to utilize this leftover food so that it can be used to feed those people who are not able to organise
+ even two times meals for them.To solve this problem we have come up with a system which can take request from the users who have excess
+ food and are not able to utilise it,they can request to donate that food,our organisation will send people to pick that
+food from you. We have also found many areas where people need food.We will collect that food from you and donate it to them.
+We also request you to provide information about those areas where people are not able to organise food for themselves so,that we can help them.This small contribution on your part can change life of some people.
+We also request you to donate good quality food and not after it get spoiled.Because it can put life of some people to danger.
+</p>
+{% endblock %}
+</div>
+</div>
+
+  <div class="foot">
+  <h5 id="footer_text">© Kill Hunger | Sakshi Gupta</h5>
+  </div>
+
+</body>
+
+</html>

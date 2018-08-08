@@ -1,0 +1,221 @@
+ {
+    box-sizing: border-box;
+}
+
+body {
+
+    margin:0;
+
+
+}
+
+#heading
+{
+    color:black;
+    font-size: 3.5em;
+    font-family: Lobster, cursive;
+    text-shadow: 0 2px 1px #020c0b;
+}
+
+#quote
+{
+  font-family: Georgia, serif;
+}
+/* Style the header */
+.header {
+
+    text-align: center;
+    background: white;
+    color: black;
+}
+
+
+/* Increase the font size of the h1 element */
+.header h1 {
+    font-size: 40px;
+}
+
+/* Style the top navigation bar */
+.div2 {
+    overflow: hidden;
+    background-color:#32251b;
+    border-radius: 0px;
+    margin-bottom: 0px;
+}
+
+/* Style the navigation bar links */
+.div2 a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-size: 17px;
+
+}
+
+/* Right-aligned link */
+.div2 a.right {
+    float: right;
+}
+
+/* Change color on hover */
+.div2 a:hover {
+    background-color: white;
+    color: black;
+    text-decoration: none;
+}
+
+/* Column container */
+.row {
+    margin-top: 0;
+    display: flex;
+    flex-direction:row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin:5px;
+
+
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+    flex: 30%;
+    background-color:#524a4a;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color:white;
+}
+
+/* Main column */
+.main {
+    flex: 70%;
+    background-color: white;
+    padding:20px;
+}
+
+#home_heading
+{
+    font-family: fontawesome;
+}
+
+/* Footer */
+.foot {
+    padding: 40px;
+    text-align: center;
+    background:#2f261e;
+    color:white;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+    .row {
+        flex-direction: column;
+    }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+    .div2 a {
+        float: none;
+        width:100%;
+    }
+}
+
+/* .form_area
+{
+
+  background-color:#524a4a;
+  padding:2px;
+  width:100%;
+  border-radius: 2px;
+
+} */
+
+.inner_div
+{
+  background-color:#E0E0E0;
+  padding: 20px;
+  width:98%;
+
+}
+.footer_text
+{
+  color:white;
+}
+
+.button {
+    background-color:#32251b;
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display:block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    width:100%;
+}
+img.left {
+	float: left;
+	margin: 5px 20px 0 0;
+	width:200px;
+	height:200px;
+}
+
+#home_text
+{
+  font-family: 'Tangerine', serif;
+  font-size: 35px;
+}
+
+.design
+{
+  padding:20px;
+  color:white;
+  background: #32251b;
+
+}
+#heading_link{
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.side_heading{
+
+     font-family: fontawesome;
+}
+
+.side_text
+{
+  font-family: 'Lobster', serif;
+
+}
+
+
+.side_image
+{
+  padding: 10px;
+  height:250px;
+  width:95%;
+}
+
+.side_head
+{
+    font-family: "Lobster", serif;
+}
+
+.side ul li {
+   text-decoration: none;
+  color:white;
+}
+
+.text
+{
+font-size:100px;
+}

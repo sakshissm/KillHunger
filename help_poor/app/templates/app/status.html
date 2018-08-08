@@ -1,0 +1,30 @@
+{% extends "app/index.html" %}
+{% load staticfiles %}
+{% load app_extras %}
+{% block side_block %}
+<h2 class="side_head" align="center"><b>Donate Food Spread Happiness</b></h2>
+<p><img src="{% static "app/pic1.jpeg" %}" alt="" class="side_image"></p>
+<!-- <p><img src="{% static "app/pic3.jpeg" %}" alt="" class="side_image"></p> -->
+{% endblock %}
+{% block body_block %}
+  <h1><b>Change Status</b></h1>
+  <div class="form_area">
+    <div class="inner_div">
+
+
+    <form method="post">
+      {% csrf_token %}
+
+    <div class="form-group">
+       <label for="id">Order Id:</label>
+
+    <input type="text" name="id" value="" id="id" class="form-control">
+    </div>
+
+    <input type="submit" name="" value="Change Status" class="button">
+    </form>
+
+  </div>
+  </div>
+
+{% endblock %}

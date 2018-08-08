@@ -1,0 +1,94 @@
+{% extends "app/index.html" %}
+{% load staticfiles %}
+{% load app_extras %}
+
+
+
+{% block side_block %}
+<h2 class="side_heading" align="center"><b>Report Area</b></h2>
+<h3 class="side_text">If you have knowledge about any area where people are not able to afford food or you come to know about it ,please share it with us.This small contribution on your part can change life of some people.</h4>
+<h2 class="side_head" align="center"><b>Donate Food Spread Happiness</b></h2>
+<p><img src="{% static "app/pic1.jpeg" %}" alt="" class="side_image"></p>
+<p><img src="{% static "app/pic3.jpeg" %}" alt="" class="side_image"></p>
+<p><img src="{% static "app/pic5.jpeg" %}" alt="" class="side_image"></p>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+{% block body_block %}
+<h1><b>Report Area</b></h1>
+  <div class="form_area">
+
+  <div class="inner_div">
+
+
+  <form method="post">
+    {% csrf_token %}
+    <div class="form-group">
+       <label for="{{ form.name.id_for_label}}">Name of the area:</label>
+       {{ form.name|add_class:"form-control" }}
+    </div>
+    <div class="form-group">
+       <label for="{{ form.address.id_for_label}}">Address:</label>
+       {{ form.address|add_class:"form-control" }}
+    </div>
+    <div class="form-group">
+       <label for="{{ form.city.id_for_label}}">City:</label>
+       {{ form.city|add_class:"form-control" }}
+    </div>
+    <div class="form-group">
+       <label for="{{ form.state.id_for_label}}">State:</label>
+       {{ form.state|add_class:"form-control" }}
+    </div>
+    <div class="form-group">
+       <label for="{{ form.pincode.id_for_label}}">Pincode:</label>
+       {{ form.pincode|add_class:"form-control" }}
+    </div>
+    <div class="form-group">
+       <label for="{{ form.category.id_for_label}}">Major category of people who live in that area like old,adults or children:</label>
+       {{ form.category|add_class:"form-control" }}
+    </div>
+    <div class="form-group">
+       <label for="{{ form.people_count.id_for_label}}">Approximate number of people in that area:</label>
+       {{ form.people_count|add_class:"form-control" }}
+    </div>
+    <div class="form-group">
+       <label for="{{ form.need.id_for_label}}">Food requirements of area:</label>
+       {{ form.need|add_class:"form-control" }}
+    </div>
+    <div class="form-group">
+       <label for="{{ form.source.id_for_label}}">How you come to know about this area?</label>
+       {{ form.source|add_class:"form-control" }}
+    </div>
+    <h3><b><u>Please provide us your contact details:</u></b></h3>
+
+    <div class="form-group">
+       <label for="{{ form.email.id_for_label}}">Email:</label>
+       {{ form.email|add_class:"form-control" }}
+    </div>
+    <div class="form-group">
+       <label for="{{ form.mobile.id_for_label}}">Mobile number:</label>
+       {{ form.mobile|add_class:"form-control" }}
+    </div>
+
+
+  <!-- {% for field in form %}
+  <div class="form-group">
+     <label for="{{ field.id_for_label}}">{{ field.label }}</label>
+
+  {{ field|add_class:"form-control" }}
+  </div>
+  {% endfor %} -->
+  <input type="submit" name="" value="Send" class="button">
+  </form>
+</div>
+</div>
+
+{% endblock %}
