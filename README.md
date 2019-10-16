@@ -4,5 +4,5 @@ This is a website developed to manage leftover food.User can make a request to d
 User can provide information about needy areas and they can also apply if they wish to volunteer.
 
 
-Screenshots and ppt of application are given under issues section: https://github.com/sakshissm/KillHunger/issues/2
+Screenshots and presentation of application are given under issues section: https://github.com/sakshissm/KillHunger/issues/2
 
